@@ -1,4 +1,4 @@
-# Virtual QR Library :closed_book:
+# Virtual QR Library 📚:
 
 ## Materia
 Procesamiento Digital de Imágenes :framed_picture:
