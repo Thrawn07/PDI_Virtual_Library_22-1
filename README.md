@@ -1,4 +1,4 @@
-# Virtual QR Library 📚:
+# Virtual QR Library 📚
 
 ## Materia
 Procesamiento Digital de Imágenes :framed_picture:
@@ -19,6 +19,6 @@ Este proyecto consiste en una biblioteca virtual alojada en la web que hace uso 
 
 -
 
-- Fernando :man_technologist:.
+- Fernando
 
 ---
