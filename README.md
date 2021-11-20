@@ -15,7 +15,7 @@ Este proyecto consiste en una biblioteca virtual alojada en la web que hace uso 
 
 - Yazmin
 
--
+- Erick
 
 - Isaac Adiel🥯🍎🍯
 
