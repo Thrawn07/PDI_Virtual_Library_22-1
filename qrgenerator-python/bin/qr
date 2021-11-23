@@ -1,4 +1,4 @@
-#!/mnt/c/Users/Fer/Desktop/Github/PDI_Virtual_Library_22-1/python/qrgenerator/bin/python3
+#!/mnt/c/Users/Fer/Desktop/Github/PDI_Virtual_Library_22-1/qrgenerator-python/bin/python3
 # EASY-INSTALL-ENTRY-SCRIPT: 'qrcode==7.3.1','console_scripts','qr'
 __requires__ = 'qrcode==7.3.1'
 import re
