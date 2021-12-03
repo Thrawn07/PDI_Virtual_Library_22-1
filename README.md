@@ -23,3 +23,16 @@ Este proyecto consiste en una aplicación de escritorio tipo biblioteca virtual 
 
 ---
 
+## Fuentes de consulta:
+
+- https://www.sqlitetutorial.net/sqlite-python/create-tables/
+
+- https://www.sqlitetutorial.net/sqlite-insert/
+
+- https://www.sqlitetutorial.net/sqlite-python/insert/
+
+- https://pynative.com/python-sqlite-blob-insert-and-retrieve-digital-data/
+
+- 
+
+- 

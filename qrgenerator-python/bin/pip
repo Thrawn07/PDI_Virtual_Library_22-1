@@ -1,4 +1,4 @@
-#!/mnt/c/Users/Fer/Desktop/Github/PDI_Virtual_Library_22-1/qrgenerator-python/bin/python3
+#!/mnt/c/Users/Fer/Desktop/Github/PDI_Virtual_Library_22-1/qrgenerator-python/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
