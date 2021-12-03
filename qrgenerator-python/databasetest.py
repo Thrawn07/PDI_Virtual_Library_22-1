@@ -31,26 +31,26 @@ def insert_autor(conn):
     try:
         c = conn.cursor()
         sql = """ """INSERT INTO AUTOR (APELLIDO, NOMBRE) VALUES 
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?),#Yazmín
-                                                        (?, ?),#Yazmín
-                                                        (?, ?),#Yazmín
-                                                        (?, ?),#Yazmín
-                                                        (?, ?),#Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?), #Yazmín
-                                                        (?, ?);"""#Yazmín
+                                                        ('Tzu', 'Sun'), 
+                                                        ('Balmes', 'Jaime'), 
+                                                        ('Spurgeon', 'Charles'), 
+                                                        ('Carroll', 'Lewis'),
+                                                        ('Rousseau', 'Jacques'), 
+                                                        ('de Nebrija', 'Antonio'),
+                                                        ('Darwin', 'Charles'),
+                                                        ('Eguíluz', 'Javier'), 
+                                                        ('Peñalver', 'José'),
+                                                        ('Shelley', 'Mary'),
+                                                        ('Trostky', 'Leon'),
+                                                        ('Lovecraft', 'H. P.'),
+                                                        ('Poe', 'Edgar'),
+                                                        ('de Cervantes', 'Miguel'),
+                                                        ('Alighieri', 'Dante'),
+                                                        ('Doyle', 'Arthur Conan'),
+                                                        ('Herman', 'Hesse'),
+                                                        ('Verne', 'Julio'),
+                                                        ('Hitler', 'Adolf'),
+                                                        ('Wilde', 'Oscar');"""
        """
         c.execute(sql)
         conn.commit()
@@ -61,15 +61,16 @@ def insert_categoria(conn, categoria):
     try:
         c = conn.cursor()
         sql = """ """INSERT INTO CATEGORIAS (ID_CATEGORIA, NOMBRE) VALUES 
-                                                                (?, ?), #Yazmín
-                                                                (?, ?), #Yazmín
-                                                                (?, ?), #Yazmín
-                                                                (?, ?), #Yazmín
-                                                                (?, ?), #Yazmín
-                                                                (?, ?), #Yazmín
-                                                                (?, ?), #Yazmín
-                                                                (?, ?), #Yazmín
-                                                                (?, ?);"""#Yazmín
+                                                                (000, 'Generalidades'),
+                                                                (100, 'Filosofía y Psicología'),
+                                                                (200, 'Religión'),
+                                                                (300, 'Ciencias Sociales'),
+                                                                (400, 'Lenguas'),
+                                                                (500, 'Ciencias Naturales y Matemáticas'),
+                                                                (600, 'Tecnología'),
+                                                                (700, 'Artes'),
+                                                                (800. 'Literatura y retórica')
+                                                                (900, 'Geografía e Historia');"""
     """c.execute(sql)
         conn.commit()
     except Error as e:
@@ -81,26 +82,26 @@ def insert_libro(conn, libro):
         sql = """ """INSERT INTO LIBRO (ID_LIBRO, TITULO, FECHA, 
                                     AID_AUTOR, CID_CATEGORIA, 
                                     QID_CATEGORIA) VALUES 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,) #Yazmín 
-                                                    (?, ?, ?, ?, ?, ?,);""" #Yazmín
+                                                    (101, 'El arte de la guerra', 'Siglo V a. C.', 1, 100, 1,)
+                                                    (102, 'El criterio', 1845, 2, 100, 2,) 
+                                                    (201, 'El tesoro de David', 2015, 3, 200, 3,)
+                                                    (801, 'Alicia en el país de las Maravillas', 1865, 4, 800, 4,)
+                                                    (301, 'El contrato social', 1762, 5, 300, 5,)
+                                                    (401, 'Gramática castellana', 1492, 6, 400, 6,)
+                                                    (501, 'EL origen de las especies', 1859, 7, 500, 7,) 
+                                                    (601, 'CSS avanzado', 2005, 8, 600, 8,)
+                                                    (701, 'Lenguaje musical II', 2006, 9, 700, 9,)
+                                                    (802, 'Frankestein', 1818, 10, 800, 10,)
+                                                    (901, 'Historia de la revolución rusa', 1930, 11, 900, 11,)
+                                                    (803, 'Dagón', 1917, 12, 800, 12,)
+                                                    (804, 'El gato negro', 1843, 13, 800, 13,)
+                                                    (805, 'Don Quijote de la mancha', 1605, 14, 800, 14,)
+                                                    (602, 'La Divina comedia', 1321, 15, 700, 15,)
+                                                    (806, 'El sabueso de los Baskerville', 1902, 16, 800, 16,)
+                                                    (807, 'El lobo Estepario', 1927, 17, 800, 17,)
+                                                    (808, 'Viaje al centro de la tierra', 1864, 18, 800, 18,)
+                                                    (103, 'Mi lucha', 1925, 19, 100, 19,)
+                                                    (809, 'El fantasma de Canterville', 1887, 20, 800, 20,);"""
   """      c.execute(sql, libro)
         conn.commit()
     except Error as e:
