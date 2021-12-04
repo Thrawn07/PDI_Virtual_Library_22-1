@@ -33,6 +33,10 @@ Este proyecto consiste en una aplicación de escritorio tipo biblioteca virtual 
 
 - https://pynative.com/python-sqlite-blob-insert-and-retrieve-digital-data/
 
-- 
+- https://gist.github.com/neosergio/2927651
 
-- 
+-https://stackoverflow.com/questions/28089942/difference-between-fill-and-expand-options-for-tkinter-pack-method/28090362
+
+-https://docs.python.org/es/3.9/library/tkinter.ttk.html
+
+-https://github.com/TomSchimansky/CustomTkinter/blob/master/Readme.md
