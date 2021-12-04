@@ -11,7 +11,7 @@ customtkinter.set_appearance_mode("System")
 #variables
 ventana =Tk()
 ventana.geometry("500x350")
-ventana.title("Procesamiento digital de imagenes")
+ventana.title("BooQR")
 listlibro1=[ "El arte de la guerra", "El criterio", "Activo"]
 listlibro2=["El tesoro de David"]
 listlibro3=[ "El contrato social"]
