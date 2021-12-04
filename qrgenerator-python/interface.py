@@ -8,6 +8,16 @@ from tkinter import ttk
 ventana =Tk()
 ventana.geometry("600x600")
 ventana.title("Procesamiento digital de imagenes")
+listlibro1=[ "El arte de la guerra", "El criterio", "Activo"]
+listlibro2=["El tesoro de David"]
+listlibro3=[ "El contrato social"]
+listlibro4=["Gramática castellana"]
+listlibro5=["EL origen de las especie"]
+listlibro6=["CSS avanzado","La Divina comedia"]
+listlibro7=["Lenguaje musical II"]
+listlibro8=["Alicia en el país de las Maravillas","Frankestein","Dagón","El gato negro","Don Quijote de la mancha",
+"El sabueso de los Baskerville","'El lobo Estepario","Viaje al centro de la tierra","El fantasma de Canterville"]
+listlibro9=["no available"]
 #Variables que almacenarán los datos
 genero = IntVar()
 genero.set(1)
@@ -38,15 +48,15 @@ entrada_genero_7.grid(row=8, column=1)
 entrada_genero_8.grid(row=9, column=1)
 entrada_genero_9.grid(row=10, column=1)
 #entrada de las listas
-entrada_libro_1= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
-entrada_libro_2= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
-entrada_libro_3= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
-entrada_libro_4= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
-entrada_libro_5= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
-entrada_libro_6= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
-entrada_libro_7= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
-entrada_libro_8= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
-entrada_libro_9= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
+entrada_libro_1= ttk.Combobox(ventana,values=listlibro1)
+entrada_libro_2= ttk.Combobox(ventana,values=listlibro2)
+entrada_libro_3= ttk.Combobox(ventana, values=listlibro3)
+entrada_libro_4= ttk.Combobox(ventana,values=listlibro4)
+entrada_libro_5= ttk.Combobox(ventana, values=listlibro5)
+entrada_libro_6= ttk.Combobox(ventana,values=listlibro6)
+entrada_libro_7= ttk.Combobox(ventana, values=listlibro7)
+entrada_libro_8= ttk.Combobox(ventana,values=listlibro8)
+entrada_libro_9= ttk.Combobox(ventana, values=listlibro9)
 
 
 
