@@ -3,10 +3,14 @@ from tkinter import*
 from tkinter import font
 from tkinter import messagebox
 from tkinter import ttk
+import customtkinter  # <- import the CustomTkinter module
+#prueba de tema  habilita el cambio de color de la interface con el sistema
+customtkinter.enable_macos_darkmode()
+customtkinter.set_appearance_mode("System")
 
 #variables
 ventana =Tk()
-ventana.geometry("600x600")
+ventana.geometry("500x350")
 ventana.title("Procesamiento digital de imagenes")
 listlibro1=[ "El arte de la guerra", "El criterio", "Activo"]
 listlibro2=["El tesoro de David"]
@@ -21,8 +25,7 @@ listlibro9=["no available"]
 #Variables que almacenarán los datos
 genero = IntVar()
 genero.set(1)
-libro = StringVar()
-libro.set("seleccione opcion")
+ 
 
 #etiquetas
 etiqueta = Label(ventana,text = "Bienvenidos seleccione el libro que desee: ", bg = "blue")
@@ -59,7 +62,6 @@ entrada_libro_8= ttk.Combobox(ventana,values=listlibro8)
 entrada_libro_9= ttk.Combobox(ventana, values=listlibro9)
 
 
-
 #mostrar las listas 
 entrada_libro_1.grid(row=2, column=2)
 entrada_libro_2.grid(row=3, column=2)
@@ -70,7 +72,12 @@ entrada_libro_6.grid(row=7, column=2)
 entrada_libro_7.grid(row=8, column=2)
 entrada_libro_8.grid(row=9, column=2)
 entrada_libro_9.grid(row=10, column=2)
-
+##boton personalizado con customtkinte seleccione libro
+def button_event():
+    print("button pressed")
+button = customtkinter.CTkButton(master=ventana,text="Seleccionar libro",
+command=button_event,width=120,height=32,border_width=0, corner_radius=8)
+button.grid(row=11, column=2)
 
 
 ventana.mainloop()
