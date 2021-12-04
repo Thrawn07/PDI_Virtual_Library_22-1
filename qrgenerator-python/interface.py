@@ -1,7 +1,10 @@
+#librerias
 from tkinter import*
 from tkinter import font
 from tkinter import messagebox
+from tkinter import ttk
 
+#variables
 ventana =Tk()
 ventana.geometry("600x600")
 ventana.title("Procesamiento digital de imagenes")
@@ -11,14 +14,9 @@ genero.set(1)
 libro = StringVar()
 libro.set("seleccione opcion")
 
+#etiquetas
 etiqueta = Label(ventana,text = "Bienvenidos seleccione el libro que desee: ", bg = "blue")
 etiqueta.grid(row=1, column=2)
-#####definicion de variable y boton
-def Despedida():
-   messagebox.showinfo("Welcome to GFG.",  "Hasta Luego")
-
-#boton1=Button(ventana, text ="press it", command= Despedida)
-#boton1.grid(row=8, column=3)
 etiqueta_genero = Label(ventana, text='Genero: ')
 entrada_genero_1 = Radiobutton(ventana, text='Filosofia y psicologia', variable=genero, value=1)
 entrada_genero_2 = Radiobutton(ventana, text='Lenguas', variable=genero, value=2)
@@ -49,7 +47,6 @@ entrada_libro_6= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio
 entrada_libro_7= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
 entrada_libro_8= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
 entrada_libro_9= OptionMenu(ventana, libro, "El arte de la guerra", "El criterio", "Activo")
-
 
 
 
