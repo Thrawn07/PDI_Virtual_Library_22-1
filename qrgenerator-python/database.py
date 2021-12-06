@@ -21,11 +21,6 @@ def create_table(conn, create_table_sql):
     except Error as e:
         print(e)
 
-def pic2blob(file):
-    with open(file, 'rb') as f:
-        blob = f.read()
-    return blob
-
 def insert_autor(conn):
     try:
         c = conn.cursor()
@@ -74,6 +69,38 @@ def insert_categoria(conn):
     except Error as e:
         print(e)
 
+def insert_qr(conn):
+    try:
+        c = conn.cursor()
+        sql = """ INSERT INTO QR (LINK) VALUES
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/847/1297'),
+                                        ('http://www.suneo.mx/literatura/subidas/Jaime%20Balmes%20El%20Criterio.pdf'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/810/1095'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/94/120 '),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/449/584'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/1546/3437'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/53/35'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/27/9'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/158/214'),                                        
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/717/916'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/757/991'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/507/679'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/58/46'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/77/92'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/884/1406'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/245/1259'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/72/79'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/240/320'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/76/89'),
+                                        ('https://www.elejandria.com/libro/link_descarga_libro/123/156');"""
+
+        c.execute(sql)
+        conn.commit()
+    except Error as e:
+        print(e)
+
+
+
 def insert_libro(conn):
     try:
         c = conn.cursor()
@@ -105,19 +132,6 @@ def insert_libro(conn):
     except Error as e:
         print(e)
 
-"""
-def insert_qr(ID_QR, IMAGEN):
-    try:
-        conn = sqlite3.connect('library.db')
-        c = conn.cursor()
-        sql =""" """INSERT INTO QR (ID_QR, IMAGEN) VALUES (?, ?);"""
-"""
-        picture = pic2blob(IMAGEN)
-        data_tuple = (ID_QR, picture)
-        c.execute(sql, data_tuple)
-        conn.commit()
-    except Error as e:
-        print(e)"""
 
 def main():
     database = r"library.db"
@@ -138,7 +152,7 @@ def main():
     sql_create_qr_table = """
                           CREATE TABLE IF NOT EXISTS QR(
                             ID_QR INTEGER PRIMARY KEY AUTOINCREMENT,
-                            IMAGEN BLOB NOT NULL
+                            LINK TEXT NOT NULL
                           );"""
 
     sql_create_libro_table = """
@@ -165,31 +179,11 @@ def main():
         create_table(conn, sql_create_libro_table)
 
         ####    LLENADO DE TABLAS   ####
-        
         insert_autor(conn)
         insert_categoria(conn)
+        insert_qr(conn)
         insert_libro(conn)
         
-        """insert_qr(1, "img/1.png")
-        insert_qr(2, "img/2.png")
-        insert_qr(3, "img/3.png")
-        insert_qr(4, "img/4.png")
-        insert_qr(5, "img/5.png")
-        insert_qr(6, "img/6.png")
-        insert_qr(7, "img/7.png")
-        insert_qr(8, "img/8.png")
-        insert_qr(9, "img/9.png")
-        insert_qr(10, "img/10.png")
-        insert_qr(11, "img/11.png")
-        insert_qr(12, "img/12.png")
-        insert_qr(13, "img/14.png")
-        insert_qr(15, "img/15.png")
-        insert_qr(16, "img/16.png")
-        insert_qr(17, "img/17.png")
-        insert_qr(18, "img/18.png")
-        insert_qr(19, "img/19.png")
-        insert_qr(20, "img/20.png")"""
-
     else:
         print("Error! No se puede crear la conexión a la base de datos")
 
