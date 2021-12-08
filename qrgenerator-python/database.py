@@ -18,6 +18,7 @@ def create_table(conn, create_table_sql):
         c = conn.cursor()
         c.execute(create_table_sql)
         conn.commit()
+        
     except Error as e:
         print(e)
 
@@ -47,6 +48,7 @@ def insert_autor(conn):
                                                         ('Wilde', 'Oscar');"""
         c.execute(sql)
         conn.commit()
+        
     except Error as e:
         print(e)
 
@@ -66,6 +68,7 @@ def insert_categoria(conn):
                                                                 (900, 'Geografía e Historia');"""
         c.execute(sql)
         conn.commit()
+        
     except Error as e:
         print(e)
 
@@ -121,7 +124,7 @@ def insert_libro(conn):
                                             (803, 'Dagón', 1917, 12, 800, 12),
                                             (804, 'El gato negro', 1843, 13, 800, 13),
                                             (805, 'Don Quijote de la mancha', 1605, 14, 800, 14),
-                                            (602, 'La Divina comedia', 1321, 15, 700, 15),
+                                            (702, 'La Divina comedia', 1321, 15, 700, 15),
                                             (806, 'El sabueso de los Baskerville', 1902, 16, 800, 16),
                                             (807, 'El lobo Estepario', 1927, 17, 800, 17),
                                             (808, 'Viaje al centro de la tierra', 1864, 18, 800, 18),
@@ -129,6 +132,7 @@ def insert_libro(conn):
                                             (809, 'El fantasma de Canterville', 1887, 20, 800, 20);"""
         c.execute(sql)
         conn.commit()
+        
     except Error as e:
         print(e)
 
@@ -183,6 +187,8 @@ def main():
         insert_categoria(conn)
         insert_qr(conn)
         insert_libro(conn)
+       
+        conn.close()
         
     else:
         print("Error! No se puede crear la conexión a la base de datos")

@@ -1,46 +1,64 @@
 #librerias
+from os import read
 from tkinter import *
 from tkinter import font, ttk
-import customtkinter
 import sqlite3
-import qrcode
+#import qrcode
+#import cv2
 
-#prueba de tema  habilita el cambio de color de la interface con el sistema
-customtkinter.enable_macos_darkmode()
-customtkinter.set_appearance_mode("System")
 
-#variables
+####   FUNCIONES PARA GENERAR CÓDIGOS QR    ####
+"""
+def codigol1():        
+    conn = sqlite3.connect('library.db')
+    c = conn.cursor()
+    c.execute("""#SELECT LINK FROM QR WHERE ID_QR=1""")
+"""tupla = c.fetchall()
+    s  = str(tupla[0][0:])
+    print(type(s))
+    print(s)
+    conn.close()
+    qr1 = qrcode.make(s)
+    qr1.save('1.png')
+    print("QR generado")"""
+
+
+####    VENTANA ####
 ventana=Tk() 
-ventana.geometry("500x350")
-ventana.title("Procesamiento digital de imagenes")
-listlibro1=[ "El arte de la guerra", "El criterio", "Activo"]
+ventana.geometry("640x480")
+ventana.title("BooQR")
+
+####    LISTAS PARA COMBOBOXES   ####
+listlibro1=[ "El arte de la guerra", "El criterio"]
 listlibro2=["El tesoro de David"]
 listlibro3=[ "El contrato social"]
 listlibro4=["Gramática castellana"]
-listlibro5=["EL origen de las especie"]
-listlibro6=["CSS avanzado","La Divina comedia"]
-listlibro7=["Lenguaje musical II"]
+listlibro5=["El origen de las especies"]
+listlibro6=["CSS avanzado"]
+listlibro7=["Lenguaje musical II", "La divina comedia"]
 listlibro8=["Alicia en el país de las Maravillas","Frankestein","Dagón","El gato negro","Don Quijote de la mancha",
 "El sabueso de los Baskerville","'El lobo Estepario","Viaje al centro de la tierra","El fantasma de Canterville"]
-listlibro9=["no available"]
+listlibro9=["Historia de la revolución rusa"]
+
 #Variables que almacenarán los datos
 categoria = IntVar()
 categoria.set(1)
  
 
 #etiquetas
-etiqueta = Label(ventana,text = "Bienvenidos! Seleccione el libro que desee: ", bg = "blue")
+
+etiqueta = ttk.Label(ventana,text = "Bienvenidos! Seleccione el libro que desee: ", background="blue")
 etiqueta.grid(row=1, column=1)
-etiqueta_categoria = Label(ventana, text='categoria: ')
-entrada_categoria_1 = Radiobutton(ventana, text='Filosofia y psicologia', variable=categoria, value=1)
-entrada_categoria_2 = Radiobutton(ventana, text='Lenguas', variable=categoria, value=2)
-entrada_categoria_3 = Radiobutton(ventana, text='Artes', variable=categoria, value=3)
-entrada_categoria_4 = Radiobutton(ventana, text='Religion', variable=categoria, value=4)
-entrada_categoria_5 = Radiobutton(ventana, text='Ciencias naturales y matematicas', variable=categoria, value=5)
-entrada_categoria_6 = Radiobutton(ventana, text='Literatura y retorica', variable=categoria, value=6)
-entrada_categoria_7 = Radiobutton(ventana, text='Ciencias sociales', variable=categoria, value=7)
-entrada_categoria_8 = Radiobutton(ventana, text='Tecnologia', variable=categoria, value=8)
-entrada_categoria_9 = Radiobutton(ventana, text='Geografia e historia', variable=categoria, value=9)
+etiqueta_categoria =  ttk.Label(ventana, text='Categoria: ')
+entrada_categoria_1 = ttk.Label(ventana, text='Filosofia y psicologia')
+entrada_categoria_2 = ttk.Label(ventana, text='Lenguas',  )
+entrada_categoria_3 = ttk.Label(ventana, text='Artes' )
+entrada_categoria_4 = ttk.Label(ventana, text='Religion')
+entrada_categoria_5 = ttk.Label(ventana, text='Ciencias naturales y matematicas')
+entrada_categoria_6 = ttk.Label(ventana, text='Literatura y retorica')
+entrada_categoria_7 = ttk.Label(ventana, text='Ciencias sociales')
+entrada_categoria_8 = ttk.Label(ventana, text='Tecnologia')
+entrada_categoria_9 = ttk.Label(ventana, text='Geografia e historia')
 #placement of buttons 
 entrada_categoria_1.grid(row=2, column=1)
 entrada_categoria_2.grid(row=3, column=1)
@@ -80,8 +98,19 @@ entrada_libro_9.grid(row=10, column=2)
 #######################################################################
                         ####    BOTÓN   ####
 ####    FUNCIÓN  ####
+
+
+
+"""
 def button_event():
-    print("button pressed")
+    codigol1()
+    Image.open('1.png')"""
+
+    
+
+
+
+        
 
 
 
@@ -99,8 +128,7 @@ def button_event():
 
 
 ####    INSTANCIA   ####
-button = customtkinter.CTkButton(master=ventana,text="Seleccionar libro",
-command=button_event,width=120,height=32,border_width=0, corner_radius=8)
+button = Button(master=ventana,text="Obtener libro",width=120)
 button.grid(row=11, column=2)
 
 
